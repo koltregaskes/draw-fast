@@ -70,6 +70,9 @@ export function LiveImageProvider({
 			},
 		})
 
+		// The fetcher closes over this effect's live connection, so it has to be
+		// published from inside the effect. Rule is new in eslint-plugin-react-hooks 7.
+		// eslint-disable-next-line react-hooks/set-state-in-effect
 		setFetchImage({
 			current: (req) => {
 				return new Promise((resolve, reject) => {
