@@ -1,0 +1,22 @@
+name: Dependency validation
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+      # The legacy fal proxy declares Next 13/14 peers; retained from the baseline.
+      - run: npm ci --legacy-peer-deps
+      - run: npm run lint
+      - run: npm test
+      - run: node --conditions=browser --test tests/uuid.test.mjs
+      - run: npm run build
