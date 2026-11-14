@@ -7,14 +7,15 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint",
-		"format": "prettier --write ."
+		"lint": "eslint src --ext .ts,.tsx",
+		"format": "prettier --write .",
+		"test": "node --test tests/*.test.mjs"
 	},
 	"dependencies": {
 		"@fal-ai/serverless-client": "^0.6.0",
 		"@fal-ai/serverless-proxy": "^0.6.0",
 		"@tldraw/tldraw": "canary",
-		"next": "16.4.0",
+		"next": "16.4.6",
 		"react": "^18",
 		"react-dom": "^18",
 		"uuid": "^14.0.0"
@@ -23,16 +24,18 @@
 		"@types/node": "^20",
 		"@types/react": "^18",
 		"@types/react-dom": "^18",
-		"@types/uuid": "^9.0.7",
 		"autoprefixer": "^10.0.1",
 		"eslint": "^8",
 		"eslint-config-next": "14.2.35",
 		"postcss": "^8",
 		"prettier": "^3.1.0",
 		"prettier-plugin-organize-imports": "^3.2.4",
-		"typescript": "^5"
+		"typescript": "^5.4.3"
 	},
 	"overrides": {
 		"nanoid@4.0.2": "^5.1.16"
+	},
+	"engines": {
+		"node": ">=20.9.0"
 	}
 }
