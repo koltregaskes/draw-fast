@@ -70,6 +70,8 @@ export function LiveImageProvider({
 			},
 		})
 
+		// Expose the request callback for the external realtime connection created above.
+		// eslint-disable-next-line react-hooks/set-state-in-effect
 		setFetchImage({
 			current: (req) => {
 				return new Promise((resolve, reject) => {
