@@ -1,35 +1,42 @@
 {
-	"name": "tldraw-draw-fast",
-	"version": "0.1.0",
-	"private": true,
-	"license": "MIT",
-	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
-		"start": "next start",
-		"lint": "next lint",
-		"format": "prettier --write ."
-	},
-	"dependencies": {
-		"@fal-ai/serverless-client": "^0.6.0",
-		"@fal-ai/serverless-proxy": "^0.6.0",
-		"@tldraw/tldraw": "canary",
-		"next": "16.3.1",
-		"react": "^18",
-		"react-dom": "^18",
-		"uuid": "^9.0.1"
-	},
-	"devDependencies": {
-		"@types/node": "^20",
-		"@types/react": "^18",
-		"@types/react-dom": "^18",
-		"@types/uuid": "^9.0.7",
-		"autoprefixer": "^10.0.1",
-		"eslint": "^10",
-		"eslint-config-next": "16.3.1",
-		"postcss": "^8",
-		"prettier": "^3.1.0",
-		"prettier-plugin-organize-imports": "^3.2.4",
-		"typescript": "^5"
-	}
+  "name": "tldraw-draw-fast",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint src",
+    "format": "prettier --write .",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "@fal-ai/serverless-client": "^0.6.0",
+    "@fal-ai/serverless-proxy": "^0.6.0",
+    "@tldraw/tldraw": "canary",
+    "next": "16.4.6",
+    "react": "^18",
+    "react-dom": "^18",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/uuid": "^9.0.7",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^10",
+    "eslint-config-next": "16.4.6",
+    "postcss": "^8",
+    "prettier": "^3.1.0",
+    "prettier-plugin-organize-imports": "^3.2.4",
+    "typescript": "^5"
+  },
+  "overrides": {
+    "nanoid@4.0.2": "^5.1.16"
+  },
+  "engines": {
+    "node": "^20.19.0 || ^22.13.0 || >=24.0.0"
+  }
 }
